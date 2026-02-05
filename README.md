@@ -32,7 +32,7 @@ Arbitrage betting (or "arbing") involves placing bets on all possible outcomes o
 
 * **Java Development Kit (JDK):** Version 17 or higher (Required for Spring Boot 3).
 * **Gradle:** Ensure Gradle is installed (or use the included Gradle wrapper).
-* **API Key:** A valid API Key from the SportsGameOdds service.
+* **API Key:** A valid API Key from the [SportsGameOdds](https://sportsgameodds.com) service.
 
 ### Configuration (Work in Progress)
 
