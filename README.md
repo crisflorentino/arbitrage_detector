@@ -22,7 +22,7 @@ Arbitrage betting (or "arbing") involves placing bets on all possible outcomes o
 * **Framework:** Spring Boot 3+
 * **Language:** Java
 * **Build Tool:** Gradle
-* **HTTP Client:** OkHttp3
+* **HTTP Client:** OkHttp3 (Wrapped in Spring Component)
 * **JSON Parsing:** Gson
 * **Data Source:** SportsGameOdds API
 
@@ -30,24 +30,27 @@ Arbitrage betting (or "arbing") involves placing bets on all possible outcomes o
 
 ### Prerequisites
 
-* **Java Development Kit (JDK):** Version 17 or higher (Required for Spring Boot 3).
+* **Java Development Kit (JDK):** Version 17 or higher.
 * **Gradle:** Ensure Gradle is installed (or use the included Gradle wrapper).
 * **API Key:** A valid API Key from the [SportsGameOdds](https://sportsgameodds.com) service.
 
-### Configuration (Work in Progress)
+### Configuration
 
-**⚠️ Note on API Keys:**
-Currently, the API Key configuration is static as part of the initial Spring Boot migration. To set your key, you must manually edit the java file. Dynamic input is planned for a future update.
+You can configure your API key in two ways. The application prioritizes the configuration file but falls back to interactive input.
 
-1.  Navigate to `src/main/client/SGOAPIClient.java`.
-2.  Add or update the following line:
-    ```SGOAPIClient
-    .addHeader("X-Api-Key", "api-key-goes-here")
+**Option 1: Permanent Config (Recommended)**
+1.  Navigate to `src/main/resources/application.properties`.
+2.  Add the following line:
+    ```properties
+    odds.api.key=YOUR_ACTUAL_API_KEY_HERE
     ```
+
+**Option 2: Interactive Input**
+If no key is configured, the application will prompt you to enter your API key manually in the terminal upon startup.
 
 ### Usage
 
-Run the application directly from the terminal using the Spring Boot Gradle plugin:
+Run the application directly from the terminal using the Spring Boot Gradle plugin.
 
 ```bash
 # Linux/Mac
@@ -55,23 +58,3 @@ Run the application directly from the terminal using the Spring Boot Gradle plug
 
 # Windows
 gradlew.bat bootRun -q
-
-```
-
-## 🔮 Roadmap
-
-The project is currently undergoing a major refactor to utilize the Spring ecosystem.
-
-### **Interactive CLI (Spring Shell):**
-* Allow users to exit the application gracefully at any moment.
-* Highlight arbitrage opportunities with color-coded outputs and tables.
-
-### **Automation:**
-* Implement timed interval scanning (Cron jobs) to catch arbitrage opportunities that only exist for fleeting moments.
-
-### **User Experience:**
-* Generate direct links to the specific bookmakers when an opportunity is discovered.
-
-### **Configuration:**
-* Move API Key configuration to a secure, user-prompted setup to avoid hardcoding.
-
