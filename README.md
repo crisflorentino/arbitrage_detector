@@ -37,7 +37,7 @@ Arbitrage betting (or "arbing") involves placing bets on all possible outcomes o
 ### Configuration (Work in Progress)
 
 **⚠️ Note on API Keys:**
-Currently, the API Key configuration is static as part of the initial Spring Boot migration. To set your key, you must manually edit the configuration file. Dynamic input is planned for a future update.
+Currently, the API Key configuration is static as part of the initial Spring Boot migration. To set your key, you must manually edit the java file. Dynamic input is planned for a future update.
 
 1.  Navigate to `src/main/client/SGOAPIClient.java`.
 2.  Add or update the following line:
