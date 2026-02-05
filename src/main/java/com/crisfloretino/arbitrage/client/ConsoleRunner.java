@@ -29,6 +29,9 @@ public class ConsoleRunner implements CommandLineRunner {
         boolean running = true;
 
         while (running) {
+            System.out.println("Please enter your API Key.");
+            String apiKey = scanner.next().toLowerCase();
+
             System.out.println("Please select a league from 1 - " + Leagues.values().length + " (NBA,NFL,NHL,MLB)");
             int idInput = scanner.nextInt();
 
@@ -44,7 +47,7 @@ public class ConsoleRunner implements CommandLineRunner {
                 );
 
                 String url = String.valueOf(SGOURLBuilder.buildURL(params));
-                Optional<APIResponse> response = client.fetchOdds(url);
+                Optional<APIResponse> response = client.fetchOdds(url, apiKey);
 
                 if (response.isPresent()) {
                     System.out.println("Events found: " + response.get().data().size());
