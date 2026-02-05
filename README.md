@@ -3,9 +3,13 @@
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
 ![Gradle](https://img.shields.io/badge/Gradle-02303A?style=for-the-badge&logo=Gradle&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Active_Development-brightgreen?style=for-the-badge)
+![Status](https://img.shields.io/badge/Project-Archived-orange?style=for-the-badge)
 
 A Java-based application, currently being migrated to **Spring Boot**, that fetches game odds from a variety of leagues. It interfaces with the **SportsGameOdds API** to aggregate bookmaker data and algorithmically detects **arbitrage opportunities** where the variance in odds between different bookmakers guarantees a profit regardless of the game's outcome.
+
+This was a project created to introduce me to Spring Boot and to expand my knowledge on creating Java-based applications. Though I would like to keep expanding and optimizing the code as I learn more about Spring Boot and Java in general, I would rather work on newer projects and improving myself based on previous works. For the future, I will try my best to learn more about Spring Boot, implement databases like PostgreSQL and mySQL, learn unit testing utilizing JUnit and Mockito, and more.
+
+Thanks for viewing!
 
 ## 🧐 What is Arbitrage Betting?
 
