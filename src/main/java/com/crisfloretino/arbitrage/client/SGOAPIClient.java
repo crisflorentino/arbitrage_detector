@@ -24,10 +24,10 @@ public class SGOAPIClient {
         this.gson = gson;
     }
 
-    public Optional<APIResponse> fetchOdds(String url) {
+    public Optional<APIResponse> fetchOdds(String url, String apiKey) {
         Request request = new Request.Builder()
                 .url(url)
-                .addHeader("X-Api-Key", "")
+                .addHeader("X-Api-Key", apiKey)
                 .build();
 
         try (Response response = client.newCall(request).execute()) {
