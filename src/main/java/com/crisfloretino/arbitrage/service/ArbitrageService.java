@@ -17,6 +17,7 @@ public class ArbitrageService {
     public ArbitrageService() {}
 
     public void findArbitrage(Event event) {
+        System.out.println("Searching for arbitrage opportunities in game: (" + event.getAwayTeam().getMedium() + " @ " + event.getHomeTeam().getMedium() + ")");
         Odd homeOdds = event.getHomeOdds();
         Odd awayOdds = event.getAwayOdds();
 
@@ -27,9 +28,8 @@ public class ArbitrageService {
 
         if (arbPercent < 1.0) {
             double profitPercent = (1.0 - arbPercent) * 100;
-
             printArbitrage(event, bestHome, bestAway, profitPercent);
-        }
+        } else { System.out.println("No arbitrage opportunities found for: (" + event.getAwayTeam().getMedium() + " @ " + event.getHomeTeam().getMedium() + ")"); }
     }
 
     private BestOdd findBestOdd(Odd odds) {
