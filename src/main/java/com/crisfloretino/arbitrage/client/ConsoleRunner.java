@@ -86,6 +86,6 @@ public class ConsoleRunner implements CommandLineRunner {
             }
         }
 
-        scanner.close();
+        System.exit(0);
     }
 }
